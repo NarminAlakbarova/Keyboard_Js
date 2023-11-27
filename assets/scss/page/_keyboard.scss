@@ -1,0 +1,151 @@
+#keybard-container {
+  background-image: url("../../../assets/img/Cloudwallpaper.jpg");
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  .inputField{
+    // height: 50px;
+    padding: 10px;
+    margin-top: 50px;
+    background-color: #a5a4a4c0;
+  }
+  .keyboard-container {
+    width: 100%;
+
+    .keyboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.479);
+      ul {
+        margin-right: 0;
+        li {
+          cursor: pointer;
+          height: 3.5em;
+          width: 3.5em;
+          background-color: #a5a4a4c0;
+          border-radius: 10px;
+          margin: 0.4em;
+          transition: 0.3s;
+          text-align: center;
+          font-size: 1em;
+          color: #ffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.press{
+            background-color: #0000007e;
+            transform: scale(1.3);
+          }
+        }
+        #tab {
+          width: 5em;
+        }
+
+        #caps {
+          width: 6em;
+        }
+
+        #left-shift {
+          width: 8em;
+        }
+
+        #enter {
+          width: 11.8em;
+          border-radius: 10px;
+        }
+
+        #right-shift {
+          width: 8em;
+        }
+        #back {
+          width: 7.5em;
+          border-radius: 10px;
+        }
+        #space {
+          width: 29em;
+          border-radius: 10px;
+        }
+      }
+    }
+
+    @-webkit-keyframes hit {
+      0% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+      100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+    @keyframes hit {
+      0% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+      100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+
+    @-webkit-keyframes vibrate-1 {
+      0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+      }
+      20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+      }
+      40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+      }
+      60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+      }
+      80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+      }
+      100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+      }
+    }
+    @keyframes vibrate-1 {
+      0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+      }
+      20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+      }
+      40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+      }
+      60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+      }
+      80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+      }
+      100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+      }
+    }
+  }
+}
