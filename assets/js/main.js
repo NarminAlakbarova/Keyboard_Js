@@ -5,30 +5,28 @@ let capsLockActive = false;
 
 window.addEventListener("keydown", function (e) {
   const keyPressed = e.key;
-  keyboardButtons.forEach((button) => {
-    if (button.innerText.toLowerCase() === keyPressed.toLowerCase()) {
 
-      button.classList.add("press");
-      if (keyPressed === "Enter") {
+  if (keyPressed === " ") {
+    inputField.textContent += " ";
+  } else {
+    keyboardButtons.forEach((button) => {
+      if (button.innerText.toLowerCase() === keyPressed.toLowerCase()) {
+        button.classList.add("press");
 
-        completeAction();
-      } else if (keyPressed === " ") {
-    console.log(button.innerText);
-
-        console.log("space");
-        inputField.textContent += " ";
-      } else if (keyPressed === "Backspace") {
-        console.log("backspace");
-        inputField.innerText = inputField.innerText.slice(0, -1);
-      } else {
-        inputField.innerHTML += capsLockActive
-          ? keyPressed.toUpperCase()
-          : keyPressed.toLowerCase();
+        if (keyPressed === "Enter") {
+          inputField.innerHTML += "<br>";
+        } else if (keyPressed === "Backspace") {
+          inputField.textContent = inputField.textContent.slice(0, -1);
+        } else {
+          inputField.textContent += capsLockActive
+            ? keyPressed.toUpperCase()
+            : keyPressed.toLowerCase();
+        }
+      } else if (keyPressed === "CapsLock") {
+        capsLockActive = !capsLockActive;
       }
-    } else if (keyPressed === "CapsLock") {
-      capsLockActive = !capsLockActive;
-    }
-  });
+    });
+  }
 });
 
 function completeAction() {
